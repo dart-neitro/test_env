@@ -14,7 +14,7 @@ RUN sed -i 's/\r//' /run/docker_run.sh
 RUN chmod +x /run/docker_run.sh
 
 # RUN add 
-RUN apt-get update && apt-get install libffi-dev libpq-dev python-dev python-psycopg2 -y
+# RUN apt-get update && apt-get install libffi-dev libpq-dev python-dev python-psycopg2 -y
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
