@@ -1,6 +1,7 @@
-Заготовка для тестового окружения для  докера
+Template for flask application with docker
 
-Ожидается следующая 
+Wait next:
+
 |- docker-compose.yml - main docker file
 |- nginx/ - nginx docker container
 |- web/ - web application
