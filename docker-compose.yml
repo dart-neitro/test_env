@@ -1,0 +1,28 @@
+version: '3'
+services:
+  web:
+    container_name: webservice
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    # hostname: webservice  
+    #ports:
+    # host:container
+    # - "8000:80"
+    volumes:
+      - ./:/app
+    command: "sh /run/docker_run.sh"
+
+  
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    volumes:
+      - ../nginx/configs:/etc/nginx/conf.d
+    ports:
+      # host:container
+      - "8000:80"
+    # links:
+    #  - web:webservice
+    command: [nginx-debug, '-g', 'daemon off;']
